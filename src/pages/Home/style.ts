@@ -4,7 +4,7 @@ import { Theme } from '../../@types/types'
 export const MainContainer = styled.main`
   display: grid;
   grid-template-columns: repeat(4, 280px);
-  grid-auto-rows: 300px;
+  grid-auto-rows: 320px;
   justify-content: center;
   justify-items: center;
   align-items: center;
@@ -13,37 +13,71 @@ export const MainContainer = styled.main`
   padding: 1.5rem 5rem;
 `
 
-export const CountryCards = styled.li`
+export const FilterSearchOptions = styled.div`
   display: flex;
-  align-items: left;
-  flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
 
-  background: ${({ theme }: Theme) => theme.background};
-  color: ${({ theme }: Theme) => theme.text};
-  box-shadow: 0 0 0.5rem 0.25rem ${({ theme }: Theme) => theme.shadow};
-  border-radius: 0.5rem;
-  height: 100%;
-  width: 100%;
+  padding: 1.5rem 5rem;
   margin: 0 auto;
-  transition: all 0.5s linear;
+`
 
-  img {
-    border-radius: 0.5rem 0.5rem 0 0;
-  }
+export const InputContainer = styled.form`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
 
-  h4 {
-    margin-right: auto;
-    margin-left: 1.75rem;
-    font-size: 1.25rem;
-  }
+  span {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
 
-  strong {
-    margin-right: auto;
-    margin-left: 2.25rem;
-
-    span {
-      font-weight: 300;
+    svg {
+      font-size: 1.5rem;
+      margin: 0 auto;
+      min-width: 3rem;
+      color: ${({ theme }: Theme) => theme.text};
     }
   }
+
+  input {
+    position: relative;
+    width: 400px;
+    padding: 0.75rem 3rem;
+    border-radius: 0.25rem;
+    border: 1px solid lightgrey;
+    color: ${({ theme }: Theme) => theme.text};
+    background: ${({ theme }: Theme) => theme.background};
+    transition: all 0.5s linear;
+  }
+
+  .error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+
+    input {
+      border: 1px solid red;
+    }
+
+    strong {
+      color: red;
+      position: absolute;
+      bottom: -70%;
+    }
+  }
+`
+
+export const SelectContainer = styled.select`
+  width: 180px;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  color: ${({ theme }: Theme) => theme.text};
+  background: ${({ theme }: Theme) => theme.background};
+  transition: all 0.5s linear;
 `
