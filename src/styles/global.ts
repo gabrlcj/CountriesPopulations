@@ -60,12 +60,7 @@ export const GlobalStyles = createGlobalStyle`
     cursor: not-allowed;
   }
 
-  .filter-search-options {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  
-    padding: 1.5rem 5rem;
-    margin: 0 auto;
+  input {
+    outline: none;
   }
 `
