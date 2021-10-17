@@ -19,14 +19,24 @@ export default function Home() {
     async function apiHandler() {
       if (filter === 'all') {
         setLoading(true)
-        const response: AxiosResponse<AllCountriesResponse[]> = await api.get('all')
-        setCountries(response.data)
-        setLoading(false)
+        try {
+          const response: AxiosResponse<AllCountriesResponse[]> = await api.get('all')
+          setCountries(response.data)
+          setLoading(false)
+        } catch (error) {
+          setError(`Couldn't retrieve data from the api, ${error}`)
+          setLoading(false)
+        }
       } else {
         setLoading(true)
-        const response: AxiosResponse<AllCountriesResponse[]> = await api.get(`region/${filter}`)
-        setCountries(response.data)
-        setLoading(false)
+        try {
+          const response: AxiosResponse<AllCountriesResponse[]> = await api.get(`region/${filter}`)
+          setCountries(response.data)
+          setLoading(false)
+        } catch (error) {
+          setError(`Couldn't retrieve data from the api, ${error}`)
+          setLoading(false)
+        }
       }
       setError('')
     }
@@ -34,8 +44,8 @@ export default function Home() {
   }, [filter])
 
   async function handleNameSearch() {
+    setLoading(true)
     try {
-      setLoading(true)
       const response: AxiosResponse<AllCountriesResponse[]> = await api.get(`name/${search}`)
       setCountries(response.data)
       setLoading(false)
@@ -58,24 +68,15 @@ export default function Home() {
           <span>
             <BiSearchAlt />
           </span>
-          {error ? (
-            <div className='error'>
-              <input
-                type='search'
-                name='search'
-                placeholder='Search for a country...'
-                onChange={(e) => setSearch(e.target.value)}
-              />
-              <strong>{error}</strong>
-            </div>
-          ) : (
+          <div className={error ? 'error' : ''}>
             <input
               type='search'
               name='search'
               placeholder='Search for a country...'
               onChange={(e) => setSearch(e.target.value)}
             />
-          )}
+            <strong>{error}</strong>
+          </div>
         </InputContainer>
         <SelectContainer name='select-region' onChange={(e) => setFilter(e.target.value)}>
           <option value='all'>All</option>

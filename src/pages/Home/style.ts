@@ -44,13 +44,17 @@ export const InputContainer = styled.form`
 
   input {
     position: relative;
-    width: 400px;
-    padding: 0.75rem 3rem;
+    width: 500px;
+    padding: 1rem 3rem;
     border-radius: 0.25rem;
-    border: 1px solid lightgrey;
+    border: 0;
     color: ${({ theme }: Theme) => theme.text};
-    background: ${({ theme }: Theme) => theme.background};
+    background: ${({ theme }: Theme) => theme.input};
     transition: all 0.5s linear;
+
+    &::placeholder {
+      color: ${({ theme }: Theme) => theme.text};
+    }
   }
 
   .error {
@@ -75,9 +79,10 @@ export const InputContainer = styled.form`
 
 export const SelectContainer = styled.select`
   width: 180px;
-  padding: 0.75rem 1rem;
+  padding: 1rem;
   border-radius: 0.25rem;
+  border: 0;
   color: ${({ theme }: Theme) => theme.text};
-  background: ${({ theme }: Theme) => theme.background};
+  background: ${({ theme }: Theme) => theme.input};
   transition: all 0.5s linear;
 `
