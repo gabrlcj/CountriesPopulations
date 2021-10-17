@@ -60,7 +60,7 @@ export const GlobalStyles = createGlobalStyle`
     cursor: not-allowed;
   }
 
-  input {
+  input, select {
     outline: none;
   }
 `
