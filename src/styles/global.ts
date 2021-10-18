@@ -36,7 +36,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }: Theme) => theme.text};
     font: 300 1rem 'Nunito Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
-    transition: all 0.50s linear;
+    transition: all 0.5s linear;
   }
 
   h1, h2, h3, h4, h5, h6, strong {
@@ -57,6 +57,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   [disabled] {
+    opacity: 0.6;
     cursor: not-allowed;
   }
 
