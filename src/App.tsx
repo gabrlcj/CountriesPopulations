@@ -1,5 +1,6 @@
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Routes } from './routes'
 import Header from './components/Header'
-import Home from './pages/Home'
 
 import { useDarkMode } from './hooks/useDarkMode'
 import { ThemeProvider } from 'styled-components'
@@ -12,11 +13,13 @@ function App() {
   const themeMode = theme === 'light' ? lightTheme : darkTheme
 
   return (
-    <ThemeProvider theme={themeMode}>
-      <GlobalStyles />
-      <Header toggleTheme={toggleTheme} />
-      <Home />
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={themeMode}>
+        <GlobalStyles />
+        <Header toggleTheme={toggleTheme} />
+        <Routes />
+      </ThemeProvider>
+    </Router>
   )
 }
 
