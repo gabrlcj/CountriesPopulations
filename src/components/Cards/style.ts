@@ -15,7 +15,6 @@ export const CountryCards = styled.li`
   width: 100%;
   margin: 0 auto;
   transition: all 0.5s linear;
-  transition: transform 0.3s linear;
 
   &:hover {
     transform: scale(1.025);
