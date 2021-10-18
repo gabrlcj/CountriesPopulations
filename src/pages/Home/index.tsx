@@ -1,12 +1,12 @@
 import { AllCountriesResponse } from '../../@types/types'
-import api from '../../services/api'
-import { AxiosResponse } from 'axios'
 import { FormEvent, useEffect, useState } from 'react'
+import { AxiosResponse } from 'axios'
+import api from '../../services/api'
 
 import Cards from '../../components/Cards'
 import Loading from '../../components/Loading'
-import { FilterSearchOptions, InputContainer, MainContainer, SelectContainer } from './style'
 import { BiSearchAlt } from 'react-icons/bi'
+import { FilterSearchOptions, InputContainer, MainContainer, SelectContainer } from './style'
 
 export default function Home() {
   const [countries, setCountries] = useState<AllCountriesResponse[]>([])
@@ -82,6 +82,7 @@ export default function Home() {
           <option value='all'>All</option>
           <option value='africa'>Africa</option>
           <option value='america'>America</option>
+          <option value='antarctic'>Antarctic</option>
           <option value='asia'>Asia</option>
           <option value='europe'>Europe</option>
           <option value='oceania'>Oceania</option>

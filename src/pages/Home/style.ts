@@ -3,13 +3,13 @@ import { Theme } from '../../@types/types'
 
 export const MainContainer = styled.main`
   display: grid;
-  grid-template-columns: repeat(4, 280px);
+  grid-template-columns: repeat(auto-fit, 280px);
   grid-auto-rows: 320px;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
-  gap: 5.5rem;
+  gap: 5rem;
   padding: 1.5rem 5rem;
 `
 
@@ -20,6 +20,10 @@ export const FilterSearchOptions = styled.div`
 
   padding: 1.5rem 5rem;
   margin: 0 auto;
+
+  @media (max-width: 1080px) {
+    flex-direction: column;
+  }
 `
 
 export const InputContainer = styled.form`
@@ -44,7 +48,6 @@ export const InputContainer = styled.form`
 
   input {
     position: relative;
-    width: 500px;
     padding: 1rem 3rem;
     border-radius: 0.25rem;
     border: 0;
@@ -54,6 +57,10 @@ export const InputContainer = styled.form`
 
     &::placeholder {
       color: ${({ theme }: Theme) => theme.text};
+    }
+
+    @media (min-width: 1080px) {
+      width: 500px;
     }
   }
 
