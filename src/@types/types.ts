@@ -9,9 +9,6 @@ export interface AllCountriesResponse {
   population: number
   region: string
   capital: string
-}
-
-export interface CountryDetails extends AllCountriesResponse {
   continents: string
   currencies: string[]
   subRegion: string
