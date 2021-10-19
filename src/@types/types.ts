@@ -1,5 +1,8 @@
 export interface AllCountriesResponse {
-  altSpellings: string[]
+  borders: string[]
+  capital: string
+  continents: string
+  flag: string
   flags: {
     png: string
   }
@@ -8,14 +11,8 @@ export interface AllCountriesResponse {
   }
   population: number
   region: string
-  capital: string
-  continents: string
-  currencies: {}
-  subRegion: string
-  languages: {
-    lang: string
-  }
-  borders: string[]
+  subregion: string
+  timezones: string[]
 }
 
 export interface Theme {
