@@ -14,6 +14,7 @@ export const CountryCards = styled.li`
   height: 100%;
   width: 100%;
   margin: 0 auto;
+  padding-bottom: 1rem;
   transition: all 0.5s linear;
 
   &:hover {

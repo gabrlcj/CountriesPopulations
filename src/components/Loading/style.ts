@@ -7,7 +7,7 @@ export const LoadingContainer = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  margin: 0 auto;
+  margin: 5rem auto;
   padding: 2rem 0;
 
   div {
