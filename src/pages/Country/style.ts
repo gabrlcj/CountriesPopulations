@@ -11,9 +11,9 @@ export const ButtonContainer = styled.div`
   margin: 3rem auto 3rem 5rem;
   background: ${({ theme }: Theme) => theme.element};
   box-shadow: 0 0 0.5rem 0.15rem ${({ theme }: Theme) => theme.shadow};
-  padding: 0.75rem 1rem;
   border-radius: 0.25rem;
   cursor: pointer;
+  transition: all 0.5s linear;
 
   a {
     display: flex;
@@ -21,6 +21,7 @@ export const ButtonContainer = styled.div`
     justify-content: center;
     gap: 0.5rem;
     text-decoration: none;
+    padding: 0.75rem 1rem;
 
     button {
       border: 0;
@@ -29,7 +30,7 @@ export const ButtonContainer = styled.div`
     }
 
     svg {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       color: ${({ theme }: Theme) => theme.text};
     }
   }
