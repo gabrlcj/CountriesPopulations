@@ -10,7 +10,11 @@ export default function Cards({ countries }: CardsProps) {
   return (
     <>
       {countries.map((country) => (
-        <Link to={`name/${country.name.common}`} key={country.name.common}>
+        <Link
+          style={{ textDecoration: 'none' }}
+          to={`name/${country.name.common}`}
+          key={country.name.common}
+        >
           <CountryCards>
             <img src={country.flags.png} alt='Flags of each country in the world' />
             <h4>{country.name.common}</h4>

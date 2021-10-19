@@ -7,9 +7,9 @@ export const CountryCards = styled.li`
   flex-direction: column;
   gap: 0.75rem;
 
-  background: ${({ theme }: Theme) => theme.background};
+  background: ${({ theme }: Theme) => theme.element};
   color: ${({ theme }: Theme) => theme.text};
-  box-shadow: 0 0 0.5rem 0.25rem ${({ theme }: Theme) => theme.shadow};
+  box-shadow: 0 0 0.5rem 0.15rem ${({ theme }: Theme) => theme.shadow};
   border-radius: 0.5rem;
   height: 100%;
   width: 100%;
