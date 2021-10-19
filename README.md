@@ -9,8 +9,8 @@ Está é uma aplicação que utiliza uma API Rest de países do mundo, onde enco
 
 ## 📸 Imagens
 <div align="center">
-  <img src=".github/light-mode.jpg" width=300 />
-  <img src=".github/dark-mode.jpg" width=300 />
+  <img src=".github/light-mode.jpg" width=400 />
+  <img src=".github/dark-mode.jpg" width=400 />
 </div>
 
 ## 🧰 Linguagens
