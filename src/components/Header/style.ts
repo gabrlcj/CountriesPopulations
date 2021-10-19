@@ -19,5 +19,9 @@ export const HeaderContainer = styled.header`
     strong {
       font-size: 0.85rem;
     }
+
+    svg {
+      font-size: 1.5rem;
+    }
   }
 `
