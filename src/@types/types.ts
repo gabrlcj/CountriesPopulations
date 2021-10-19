@@ -10,7 +10,7 @@ export interface AllCountriesResponse {
   region: string
   capital: string
   continents: string
-  currencies: string[]
+  currencies: {}
   subRegion: string
   languages: {
     lang: string
