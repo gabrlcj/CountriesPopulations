@@ -1,6 +1,5 @@
 import { AllCountriesResponse } from '../../@types/types'
 import { FormEvent, useEffect, useState } from 'react'
-import { AxiosResponse } from 'axios'
 import api from '../../services/api'
 
 import Cards from '../../components/Cards'
@@ -20,7 +19,7 @@ export default function Home() {
       if (filter === 'all') {
         setLoading(true)
         try {
-          const response: AxiosResponse<AllCountriesResponse[]> = await api.get('all')
+          const response = await api.get<AllCountriesResponse[]>('all')
           setCountries(response.data)
           setLoading(false)
         } catch (error) {
@@ -30,7 +29,7 @@ export default function Home() {
       } else {
         setLoading(true)
         try {
-          const response: AxiosResponse<AllCountriesResponse[]> = await api.get(`region/${filter}`)
+          const response = await api.get<AllCountriesResponse[]>(`region/${filter}`)
           setCountries(response.data)
           setLoading(false)
         } catch (error) {
@@ -46,7 +45,7 @@ export default function Home() {
   async function handleNameSearch() {
     setLoading(true)
     try {
-      const response: AxiosResponse<AllCountriesResponse[]> = await api.get(`name/${search}`)
+      const response = await api.get<AllCountriesResponse[]>(`name/${search}`)
       setCountries(response.data)
       setLoading(false)
     } catch (error) {

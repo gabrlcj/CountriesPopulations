@@ -1,4 +1,3 @@
-import { AxiosResponse } from 'axios'
 import { useEffect, useState } from 'react'
 import { RouteComponentProps } from 'react-router'
 import { Link } from 'react-router-dom'
@@ -16,7 +15,7 @@ export default function Country({ match }: RouteComponentProps) {
   useEffect(() => {
     setLoading(true)
     async function handleApiResponse() {
-      const response: AxiosResponse<AllCountriesResponse[]> = await api.get(`${match.url}`)
+      const response = await api.get<AllCountriesResponse[]>(`${match.url}`)
       setCountries(response.data)
       setLoading(false)
     }
