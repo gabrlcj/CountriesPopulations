@@ -6,7 +6,6 @@ interface CardsDetailsProps {
 }
 
 export default function CardsDetails({ countries }: CardsDetailsProps) {
-  console.log(countries)
   return (
     <DetailsContainer>
       {countries.map((country) => (
@@ -18,7 +17,10 @@ export default function CardsDetails({ countries }: CardsDetailsProps) {
               Capital: <span>{country.capital}</span>
             </strong>
             <strong>
-              Population: <span>{new Intl.NumberFormat('pt-BR').format(country.population)}</span>
+              Population:{' '}
+              <span>
+                {new Intl.NumberFormat('pt-BR').format(country.population)}
+              </span>
             </strong>
             <strong>
               Borders: <span>{country.borders?.join(', ')}</span>
