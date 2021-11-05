@@ -10,7 +10,7 @@ import { FiChevronsLeft } from 'react-icons/fi'
 
 export default function Country({ match }: RouteComponentProps) {
   const [countries, setCountries] = useState<AllCountriesResponse[]>([])
-  const [loading, setLoading] = useState<boolean>(false)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     setLoading(true)

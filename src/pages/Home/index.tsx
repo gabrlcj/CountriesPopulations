@@ -5,14 +5,19 @@ import api from '../../services/api'
 import Cards from '../../components/Cards'
 import Loading from '../../components/Loading'
 import { BiSearchAlt } from 'react-icons/bi'
-import { FilterSearchOptions, InputContainer, MainContainer, SelectContainer } from './style'
+import {
+  FilterSearchOptions,
+  InputContainer,
+  MainContainer,
+  SelectContainer,
+} from './style'
 
 export default function Home() {
   const [countries, setCountries] = useState<AllCountriesResponse[]>([])
-  const [filter, setFilter] = useState<string>('all')
-  const [search, setSearch] = useState<string>('')
-  const [error, setError] = useState<string>('')
-  const [loading, setLoading] = useState<boolean>(false)
+  const [filter, setFilter] = useState('all')
+  const [search, setSearch] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     async function apiHandler() {
@@ -29,7 +34,9 @@ export default function Home() {
       } else {
         setLoading(true)
         try {
-          const response = await api.get<AllCountriesResponse[]>(`region/${filter}`)
+          const response = await api.get<AllCountriesResponse[]>(
+            `region/${filter}`
+          )
           setCountries(response.data)
           setLoading(false)
         } catch (error) {
@@ -77,7 +84,10 @@ export default function Home() {
             <strong>{error}</strong>
           </div>
         </InputContainer>
-        <SelectContainer name='select-region' onChange={(e) => setFilter(e.target.value)}>
+        <SelectContainer
+          name='select-region'
+          onChange={(e) => setFilter(e.target.value)}
+        >
           <option value='all'>All</option>
           <option value='africa'>Africa</option>
           <option value='america'>America</option>
